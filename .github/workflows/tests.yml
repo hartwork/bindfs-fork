@@ -27,7 +27,7 @@ jobs:
             cxx: g++-12
             clang_major_version: null
             clang_repo_suffix: null
-            runs-on: macos-13
+            runs-on: macos-15
             fuse_package: fuse-t
     steps:
       - name: Add Clang/LLVM repositories
@@ -54,6 +54,9 @@ jobs:
         if: "${{ runner.os == 'macOS' }}"
         run: |-
           set -x
+
+          ls -l /Library/Developer/CommandLineTools/Packages/*.pkg
+          sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 
           if [[ ${{ matrix.fuse_package }} = macfuse ]]; then
             brew install --cask macfuse
