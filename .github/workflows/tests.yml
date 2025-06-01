@@ -97,7 +97,7 @@ jobs:
           CFLAGS: -Werror
         run: |-
           set -x
-          ./configure
+          ./configure || { cat config.log ; false ; }
 
       - name: 'Build'
         run: |-
