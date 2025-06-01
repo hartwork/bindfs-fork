@@ -23,8 +23,8 @@ jobs:
       matrix:
         include:
           # fuse-t
-          - cc: gcc-14
-            cxx: g++-14
+          - cc: gcc-12
+            cxx: g++-12
             clang_major_version: null
             clang_repo_suffix: null
             runs-on: macos-15
