@@ -54,34 +54,6 @@ jobs:
         if: "${{ runner.os == 'macOS' }}"
         run: |-
           set -x
-          echo 'int main(void) { return 0; }' > main.c
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          gcc main.c
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          gcc-12 main.c
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          gcc-13 main.c
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          gcc-14 main.c
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          exit 1
-
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          ls -l /Library/
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          ls -l /Library/Developer/
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          ls -l /Library/Developer/CommandLineTools/
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          find /Library/Developer/CommandLineTools/ -type f -name \*.pkg
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          xcode-select --install
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          find /Library/Developer/CommandLineTools/ -type f -name \*.pkg
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          ls -l /Library/Developer/CommandLineTools/Packages/
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-          sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 
           if [[ ${{ matrix.fuse_package }} = macfuse ]]; then
             brew install --cask macfuse
