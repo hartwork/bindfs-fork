@@ -104,8 +104,6 @@ jobs:
           set -x
           cpu_threads="$(nproc 2>/dev/null || sysctl -n hw.logicalcpu || echo 4)"
           echo XXXXXXXXXXXXXXXXXXXXXXXXXX
-          find /usr/local/include/ -name fuse.h
-          echo XXXXXXXXXXXXXXXXXXXXXXXXXX
           pkg-config --libs fuse_t
           echo XXXXXXXXXXXXXXXXXXXXXXXXXX
           pkg-config --cflags fuse_t
