@@ -104,9 +104,9 @@ jobs:
           set -x
           cpu_threads="$(nproc 2>/dev/null || sysctl -n hw.logicalcpu || echo 4)"
           echo XXXXXXXXXXXXXXXXXXXXXXXXXX
-          pkg-config --libs fuse_t
+          pkg-config --libs fuse-t
           echo XXXXXXXXXXXXXXXXXXXXXXXXXX
-          pkg-config --cflags fuse_t
+          pkg-config --cflags fuse-t
           echo XXXXXXXXXXXXXXXXXXXXXXXXXX
           make "-j${cpu_threads}" VERBOSE=1
 
