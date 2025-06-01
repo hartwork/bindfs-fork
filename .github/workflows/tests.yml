@@ -94,7 +94,7 @@ jobs:
         env:
           CC: ${{ matrix.cc }}
           CXX: ${{ matrix.cxx }}
-          CFLAGS: -Werror
+          CFLAGS: -Werror -D_DARWIN_C_SOURCE
         run: |-
           set -x
           ./configure || { cat config.log ; false ; }
