@@ -54,6 +54,17 @@ jobs:
         if: "${{ runner.os == 'macOS' }}"
         run: |-
           set -x
+          echo 'int main(void) { return 0; }' > main.c
+          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          gcc main.c
+          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          gcc-12 main.c
+          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          gcc-13 main.c
+          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          gcc-14 main.c
+          echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          exit 1
 
           echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
           ls -l /Library/
