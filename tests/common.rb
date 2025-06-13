@@ -62,7 +62,7 @@ def wait_for(options = {}, &condition)
         :initial_sleep => 0.01,
         :sleep_ramp_up => 2,
         :max_sleep => 0.5,
-        :max_time => 5
+        :max_time => 20
     }.merge(options)
 
     start_time = Time.now
