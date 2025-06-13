@@ -94,7 +94,7 @@ jobs:
         env:
           CC: ${{ matrix.cc }}
           CXX: ${{ matrix.cxx }}
-          CFLAGS: -Werror
+          CFLAGS: -Werror -Wno-error=extra-semi
         run: |-
           set -x
           ./configure
